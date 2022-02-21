@@ -21,7 +21,7 @@ namespace Domain.Services
                     break;
 
                 default:
-                    throw new Exception("Event invalid");
+                    throw new Exception("Invalid event name");
             }
         }
     }

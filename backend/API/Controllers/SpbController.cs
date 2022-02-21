@@ -19,14 +19,14 @@ namespace API.Controllers
         [HttpPost("events")]
         public async Task<IActionResult> Post(SpbEvent spbEvent)
         {
-            Guard.Argument(spbEvent, nameof(spbEvent)).NotNull();
-            Guard.Argument(spbEvent.Event, nameof(spbEvent.Event)).NotNull();
-            Guard.Argument(spbEvent.Target, nameof(spbEvent.Target)).NotNull();
-            Guard.Argument(spbEvent.Origin, nameof(spbEvent.Origin)).NotNull();
-            Guard.Argument(spbEvent.Amount, nameof(spbEvent.Amount)).NotNegative();
-
             try
             {
+                Guard.Argument(spbEvent, nameof(spbEvent)).NotNull();
+                Guard.Argument(spbEvent.Event, nameof(spbEvent.Event)).NotNull();
+                Guard.Argument(spbEvent.Target, nameof(spbEvent.Target)).NotNull();
+                Guard.Argument(spbEvent.Origin, nameof(spbEvent.Origin)).NotNull();
+                Guard.Argument(spbEvent.Amount, nameof(spbEvent.Amount)).NotNegative().NotZero();
+
                 await _spbService.ProcessEventReceived(spbEvent);
 
                 return Ok();

@@ -12,7 +12,7 @@ namespace Domain
             Password = "ggg",
             Cpf = "11111111111",
             CheckingAccount = new() {
-                Account = "123",
+                Account = "300123",
                 Amount = 1000
             },
             Assets = new()
