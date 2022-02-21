@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.DTO.User;
+using Domain.Entities;
 using Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,19 @@ namespace API.Controllers
             }
 
             return BadRequest();
+        }
+
+        // POST api/<UserController>/login
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UserLogin userlogin)
+        {
+            var user = await _userService.GetByLoginAsync(userlogin.Username, userlogin.Password);
+            if (user is not null)
+            {
+                return Ok(user);
+            }
+
+            return Unauthorized();
         }
 
         // POST api/<UserController>
