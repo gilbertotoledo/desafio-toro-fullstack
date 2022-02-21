@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+
+<app-loading *ngIf="!user"></app-loading>
+<div *ngIf="user">
+  <h2>Dados bancários para depósito</h2>
+  <br/>
+  <p>Banco: {{user?.checkingAccount?.bank}}</p>
+  <p>Agência: {{user?.checkingAccount?.account}}</p>
+  <p>Conta: {{user?.checkingAccount?.account}}</p>
+  <p>CPF: {{user?.cpf}}</p>
+  <br/><br/>
+  <p>Atenção: só serão aceitas transferências originadas do mesmo CPF do titular desta conta.</p>
+</div>

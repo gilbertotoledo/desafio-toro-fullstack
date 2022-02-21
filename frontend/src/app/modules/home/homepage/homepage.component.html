@@ -1,0 +1,6 @@
+<app-navigation></app-navigation>
+
+<app-loading *ngIf="!user"></app-loading>
+<div *ngIf="user">
+  Seja bem-vindo(a), {{user.name}}!
+</div>
