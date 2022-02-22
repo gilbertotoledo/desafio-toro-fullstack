@@ -1,4 +1,3 @@
-import { HttpService } from './http/http.service';
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -25,8 +24,6 @@ import { LoadingComponent } from './view/loading/loading.component';
     RouterModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    HttpService
-  ]
+  providers: []
 })
 export class SharedModule { }

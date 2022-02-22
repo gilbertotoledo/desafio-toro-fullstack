@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { from as observableFromPromise, lastValueFrom } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class HttpService {
   headers: any;
 
