@@ -12,11 +12,12 @@ Os testes unitários do backend estão no projeto `UnitTests` e podem ser execut
 
 ## Testes de API
 
-Os testes de API estão localizados na pasta `Backend/APITests`.
+Os testes de API estão localizados na pasta `Backend/APITests` e utilizam a ferramenta Cypress (https://www.cypress.io/)
 
 Requisitos: 
  - Node (https://nodejs.org/)
  - Instalar o pacote NPX (https://www.npmjs.com/package/npx)
+ 
 
 Por padrão, os testes de API apontam para o backend através da URL: 
 ```
@@ -24,9 +25,10 @@ https://localhost:44369
 ```
 
 
-Para executar os testes de API, basta abrir o Cypress usando o comando abaixo:
+Para executar os testes de API, basta abrir o Cypress usando os comandos abaixo:
 
 ```
+npm install
 npx cypress open
 ```
 
