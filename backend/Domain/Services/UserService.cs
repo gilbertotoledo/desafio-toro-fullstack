@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Domain.Entities.SPB;
 using Domain.Repositories;
 using Domain.Services.Interfaces;
 
@@ -49,7 +48,7 @@ namespace Domain.Services
 
         public async Task MockUserData()
         {
-            foreach (var user in Mock.Users)
+            foreach (var user in MockData.Users)
             {
                 await _userRepository.AddAsync(user);
             }

@@ -1,4 +1,5 @@
-﻿using Domain.Entities.SPB;
+﻿using Dawn;
+using Domain.Entities.SPB;
 using Domain.Services.Interfaces;
 
 namespace Domain.Services
@@ -12,12 +13,14 @@ namespace Domain.Services
             _checkingAccountService = checkingAccountService;
         }
 
-        public async Task ProcessEventReceived(SpbEvent spbEvent)
+        public async Task ProcessEventReceivedAsync(SpbEvent spbEvent)
         {
+            Guard.Argument(spbEvent.Amount, nameof(spbEvent.Amount)).NotNegative().NotZero();
+
             switch (spbEvent.Event)
             {
                 case Constants.TRANSFER_EVENT:
-                    await _checkingAccountService.ProcessDeposit(spbEvent);
+                    await _checkingAccountService.ProcessDepositAsync(spbEvent);
                     break;
 
                 default:

@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public static class Mock
+    public static class MockData
     {
         private static readonly User _userTest = new()
         {

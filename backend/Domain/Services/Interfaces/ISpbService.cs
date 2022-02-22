@@ -4,6 +4,6 @@ namespace Domain.Services.Interfaces
 {
     public interface ISpbService
     {
-        Task ProcessEventReceived(SpbEvent spbEvent);
+        Task ProcessEventReceivedAsync(SpbEvent spbEvent);
     }
 }

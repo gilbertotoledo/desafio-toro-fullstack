@@ -12,7 +12,7 @@ namespace Domain.Services
             _userService = userService;
         }
 
-        public async Task ProcessDeposit(SpbEvent spbEvent)
+        public async Task ProcessDepositAsync(SpbEvent spbEvent)
         {
             var user = await _userService.GetByAccountAsync(
                 spbEvent.Target.Bank, spbEvent.Target.Branch, spbEvent.Target.Account);

@@ -25,9 +25,8 @@ namespace API.Controllers
                 Guard.Argument(spbEvent.Event, nameof(spbEvent.Event)).NotNull();
                 Guard.Argument(spbEvent.Target, nameof(spbEvent.Target)).NotNull();
                 Guard.Argument(spbEvent.Origin, nameof(spbEvent.Origin)).NotNull();
-                Guard.Argument(spbEvent.Amount, nameof(spbEvent.Amount)).NotNegative().NotZero();
-
-                await _spbService.ProcessEventReceived(spbEvent);
+                                
+                await _spbService.ProcessEventReceivedAsync(spbEvent);
 
                 return Ok();
             }
