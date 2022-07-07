@@ -1,4 +1,4 @@
-# desafio-toro-fullstack
+# fullstack-project-with-api-tests
 
 # Backend
 
